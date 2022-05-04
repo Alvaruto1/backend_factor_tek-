@@ -31,7 +31,7 @@ def update_demand(id):
 def delete_demand(id):
     Demand.delete_demand(id)
     response = Response("Demand deleted", status=201, mimetype='application/json')
-    return response
+    return jsonify({'demand': id})
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
